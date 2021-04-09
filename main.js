@@ -42,11 +42,11 @@
       const $playerImg = document.createElement('img');
       $playerImg.setAttribute('src', player.img);
 
-      $player.appendChild($progressbar);
-      $player.appendChild($character);
       $progressbar.appendChild($life);
       $progressbar.appendChild($name);
       $character.appendChild($playerImg);
+      $player.appendChild($progressbar);
+      $player.appendChild($character);
       $arena.appendChild($player);
 
       // return $player;
