@@ -68,11 +68,8 @@
 
       if (player.hp < 0) {
         $playerLife.style.width = 0 + '%';
-        if (player != player1) {
-          $arenas.appendChild(playerLose(player1.name));
-        } else {
+        player != player1 ? $arenas.appendChild(playerLose(player1.name)) :
           $arenas.appendChild(playerLose(player2.name));
-        };
         $randomButton.disabled = true;
       };
     };
@@ -86,7 +83,9 @@
 
     $randomButton.addEventListener('click', () => {
       changeHP(player1);
-      changeHP(player2);
+      if (player1.hp > 0) {
+        changeHP(player2);
+      };
     });
 
     $arenas.appendChild(createPlayer(player1));
